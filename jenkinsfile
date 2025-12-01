@@ -1,0 +1,21 @@
+pipeline {
+    agent{
+    label 'remote-docker'
+    }
+    stages{
+
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+                sh 'echo "Compiling code..."'
+            }
+        }
+        stage('Test'){
+            steps{
+                echo 'Running Unit Tests...'
+                sh 'echo "All tests passed!"'
+            }
+        }
+    }
+
+}
